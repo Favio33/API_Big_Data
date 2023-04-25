@@ -58,9 +58,7 @@ def tcp_pool_connection():
 def sql_generator(table_name, key, df, cursor) -> str:
     
     all_cols = ', '.join(col for col in df.columns)
-    update_cols = ', '.join(col for col in df.columns if col not in key)
     key_columns = ', '.join(col for col in key)
-    place_holders = ', '.join('%s' for column in df.columns)
     insert_into = """ INSERT INTO %s (%s) VALUES %%s""" % (table_name, all_cols)
     update_set_query = ', '.join(f'{col}=excluded.{col}' for col in df.columns if col not in key)
     on_conflict_query = """ ON CONFLICT (%s) DO UPDATE SET %s;""" % (key_columns, update_set_query)
@@ -141,6 +139,6 @@ dfEmployees = dfEmployees.fillna(1,subset=['department_id','job_id'])
 pool = tcp_pool_connection()
 #Bulk procces
 execute_upsert(pool, 'employee.departments', ['id'], dfDept)
-execute_upsert(pool, 'employee.jobs', ['id'], dfJobs)
+execute_upsert(pool, 'employee.hiredEmployees', ['id'], dfEmployees)
 execute_upsert(pool, 'employee.hiredEmployees', ['id'], dfEmployees)
 
