@@ -1,4 +1,7 @@
-from multipledispatch import dispatch
+#Logging
+import logging
+
+logging.basicConfig(filename='insertRows.log', format='%(asctime)s - %(levelname)s - %(message)s', level=logging.INFO)
 
 #Database
 from database.conn import tcp_pool_connection
@@ -12,6 +15,9 @@ from models.entitities.Jobs import Jobs
 #Utils
 from utils.InsertQuery import InsertQuery
 from utils.Utils import Utils
+import config
+
+tables = config.tables
 
 class Model():
 
@@ -35,6 +41,12 @@ class Model():
             department = Departments(row[0], row[1])
             departments.append(department.to_JSON())
         return departments
+    
+    def __close_conn(pool, conn):
+        conn.close()
+        pool.putconn(conn)
+
+    
 
     @classmethod
     def get_rows(self, table: str, numRows: int):
@@ -47,7 +59,7 @@ class Model():
                     'hiredemployees': self.__set_employee,
                     'jobs': self.__set_jobs,
                     'departments': self.__set_depts
-                }
+                }   
 
             with conn.cursor() as cursor:
                 sql_stmt = f"SELECT * FROM employee.{table} LIMIT %s"
@@ -57,8 +69,7 @@ class Model():
                 if table in actions:
                     rows = actions[table](resultset)
                 
-            conn.close()
-            pool.putconn(conn)
+            self.__close_conn(pool,conn)
             return rows
             
         except Exception as ex:
@@ -70,26 +81,53 @@ class Model():
             #Pool connection to postgre
             pool = tcp_pool_connection()
             conn = pool.getconn()
+            
             #Build sql query
             insert_query = InsertQuery.insert_sql(table_name)
-            #Data Quality
+
+            #Constants
             verified_data = []
+            entities_list = {
+                'jobs': self.__set_jobs,
+                'departments': self.__set_depts,
+                'hiredemployees': self.__set_employee
+            }
+
+            if table_name not in tables:
+                return "Not table in database"
+
             print(data)
             for i, row in enumerate(data):
-                if Utils.validate_data(row, table_name):
-                    verified_data.append(row)
+                
+                tuple_values = (tuple(row.values()),)
+
+                try:
+                    row_entitie = entities_list[table_name](tuple_values)[0]
+                    print(type(row_entitie))
+                
+                except Exception as ex:
+                    return "Body request is not ok"
+
+                logging.info(f"Verifying data quality row number {i}")
+                if Utils.validate_data(row_entitie, table_name, pool):
+                    #Data Quality
+                    verified_data.append(row_entitie)
                 else:
-                    #Add logging
+                    logging.warn(f"""Row number {i} not inserted due to data quality
+                    Check up this dictionary: {row_entitie}""")
                     print(f'Row {i} does not pass the minimium quality requirements')
-            with conn.cursor() as cursor:
-                verified_data_tuple = Utils.list_tuples(verified_data)
-                execute_values(cursor,insert_query,verified_data_tuple)
-                affected_rows = cursor.rowcount
-                conn.commit()
-                conn.close()
-                pool.putconn(conn)
-            return affected_rows
+
+
+            if len(verified_data) > 1:
+                with conn.cursor() as cursor:
+                    verified_data_tuple = Utils.list_tuples(verified_data)
+                    execute_values(cursor,insert_query,verified_data_tuple)
+                    affected_rows = cursor.rowcount
+                    conn.commit()
+                    self.__close_conn(pool,conn)
+                return affected_rows
+            
+            return 'Any row pass data quality requirements'
         except Exception as ex:
-            conn.close()
-            pool.putconn(conn)
+            self.__close_conn(pool,conn)
             raise ex

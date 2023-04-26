@@ -1,0 +1,10 @@
+2023-04-25 23:46:05,788 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-04-25 23:46:05,788 - INFO - [33mPress CTRL+C to quit[0m
+2023-04-25 23:46:05,788 - INFO -  * Restarting with stat
+2023-04-25 23:46:06,161 - WARNING -  * Debugger is active!
+2023-04-25 23:46:06,164 - INFO -  * Debugger PIN: 120-118-666
+2023-04-25 23:46:16,266 - INFO - Verifying data quality row number 0
+2023-04-25 23:46:19,646 - WARNING - Row number 0 not inserted due to data quality
+                    Check up this dictionary: {'id': 2000, 'name': 'Jerri Zebedee', 'datetime': '2022-01-18 05:47:37.000 -0500', 'department_id': 8, 'job_id': 700}
+2023-04-25 23:46:19,684 - INFO - 127.0.0.1 - - [25/Apr/2023 23:46:19] "[35m[1mPOST /api/db/bulkInsert/hiredemployees HTTP/1.1[0m" 500 -

@@ -66,12 +66,12 @@ tables = {
         'department_id': {
             'type': int,
             'required': True,
-            'fk': True
+            'fk': [True, 'departments']
         },
         'job_id': {
             'type': int,
             'required': True,
-            'fk': True
+            'fk': [True, 'jobs']
         }
     }
 }
