@@ -13,6 +13,8 @@ def get_rows(table_name: str, numRows: int):
         return jsonify(rows)
     except Exception as ex:
         return jsonify({'Message':str(ex)}), 500
+    
+
 
 @main.route('/bulkInsert/<table_name>', methods=['POST'])
 def add_rows(table_name):

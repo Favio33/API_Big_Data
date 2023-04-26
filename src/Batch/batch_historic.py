@@ -12,8 +12,7 @@ from pyspark.sql.types import StructType, StructField, StringType, IntegerType
 import psycopg2
 from psycopg2 import DatabaseError, pool
 from psycopg2.extras import execute_values
-
-
+import datetime
 
 
 ## Utilities
@@ -100,6 +99,7 @@ employeesSchema = StructType([
     StructField('department_id', IntegerType(), True),
     StructField('job_id',IntegerType(), False)
 ])
+default_datetime = datetime.datetime(1970, 1, 1, 0, 0, 0, tzinfo=datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
 
 
 #SparkSession
@@ -131,7 +131,11 @@ dfJobs = dfJobs.union(jobRow).orderBy(f.col('id').asc())
 deptRow = spark.createDataFrame([(1,'Department not defined')],schema = jobsSchema)
 dfDept = dfDept.union(deptRow).orderBy(f.col('id').asc())
 #Fix Null Values in Employees DF
-dfEmployees = dfEmployees.fillna(1,subset=['department_id','job_id'])
+dfEmployees = dfEmployees.na.fill({'department_id':1,
+                                  'job_id':1,
+                                   'name': 'NN',
+                                   'datetime': default_datetime
+                                  })
 
 
 # ## Load in Cloud SQL

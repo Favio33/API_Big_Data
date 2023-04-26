@@ -15,6 +15,7 @@ from models.entitities.Jobs import Jobs
 #Utils
 from utils.InsertQuery import InsertQuery
 from utils.Utils import Utils
+from utils.DataQuality import DataQuality
 import config
 
 tables = config.tables
@@ -41,10 +42,6 @@ class Model():
             department = Departments(row[0], row[1])
             departments.append(department.to_JSON())
         return departments
-    
-    def __close_conn(pool, conn):
-        conn.close()
-        pool.putconn(conn)
 
     
 
@@ -69,7 +66,7 @@ class Model():
                 if table in actions:
                     rows = actions[table](resultset)
                 
-            self.__close_conn(pool,conn)
+            Utils.close_conn(pool,conn)
             return rows
             
         except Exception as ex:
@@ -103,31 +100,32 @@ class Model():
 
                 try:
                     row_entitie = entities_list[table_name](tuple_values)[0]
-                    print(type(row_entitie))
+
                 
                 except Exception as ex:
                     return "Body request is not ok"
 
                 logging.info(f"Verifying data quality row number {i}")
-                if Utils.validate_data(row_entitie, table_name, pool):
+                if DataQuality.validate_data(row_entitie, table_name, pool):
                     #Data Quality
                     verified_data.append(row_entitie)
+                    print(verified_data)
                 else:
                     logging.warn(f"""Row number {i} not inserted due to data quality
                     Check up this dictionary: {row_entitie}""")
                     print(f'Row {i} does not pass the minimium quality requirements')
 
 
-            if len(verified_data) > 1:
+            if len(verified_data) >= 1:
                 with conn.cursor() as cursor:
                     verified_data_tuple = Utils.list_tuples(verified_data)
                     execute_values(cursor,insert_query,verified_data_tuple)
                     affected_rows = cursor.rowcount
                     conn.commit()
-                    self.__close_conn(pool,conn)
+                    Utils.close_conn(pool,conn)
                 return affected_rows
             
             return 'Any row pass data quality requirements'
         except Exception as ex:
-            self.__close_conn(pool,conn)
+            Utils.close_conn(pool,conn)
             raise ex
