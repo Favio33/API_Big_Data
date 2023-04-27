@@ -6,7 +6,7 @@ Hi! This repo was created to solve the challenge, I have fun develop this featur
 
 - [Introduction](#introduction)
 - [Features](#features)
-- [Installation and Usage](#installation and usage)
+- [Installation](#installation)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -23,7 +23,7 @@ On the other hand, Cloud Functions helped me to deploy some features to diversif
 - Backup Table - Cloud Function (https://us-central1-code-challenge-384515.cloudfunctions.net/backup-db)
 - Recovery Table - Cloud Function (https://us-central1-code-challenge-384515.cloudfunctions.net/recovery-table)
 
-## Installation and Usage
+## Installation
 
 Historyc Script
 - Open Dataproc Jupyter Lab
