@@ -18,12 +18,12 @@ type_map = {
 }
 
 
-def __get_tables(cursor, db_schema):
+def get_tables(cursor, db_schema):
     cursor.execute(
         f"SELECT table_name FROM information_schema.tables WHERE table_schema = '{db_schema}'")
     return [row[0] for row in cursor.fetchall()]
 
-def __gen_avro_schema(col_datatype_tuple, table):
+def gen_avro_schema(col_datatype_tuple, table):
     fields_schema = [
         '{"name": "' + col[0] + '", "type": "' + type_map[col[1]] + '"}' for col in col_datatype_tuple]
     
@@ -73,7 +73,7 @@ def backup_tables(db_schema, backup_path):
 
             cursor = conn.cursor()
             # Get All Tables
-            tables = __get_tables(cursor,db_schema)
+            tables = get_tables(cursor,db_schema)
             cursor.close()
 
             for table in tables:
@@ -86,9 +86,10 @@ def backup_tables(db_schema, backup_path):
                 columns = cursor.fetchall()
 
                 # Generate avro schema
-                schema = __gen_avro_schema(columns, table)
+                schema = gen_avro_schema(columns, table)
+                file_name = f"{backup_path}/{table}-{datetime.datetime.now().strftime('%Y%m%d')}.avro"
 
-                with DataFileWriter(open(f"{backup_path}/{table}-{datetime.datetime.now().strftime('%Y-%m-%dT%H%M%SZ')}.avro", "wb"), DatumWriter(), schema) as writer:
+                with DataFileWriter(open(file_name, "wb"), DatumWriter(), schema) as writer:
                     cursor.execute(f"SELECT * FROM {table_esquema}")
                     rows = cursor.fetchall()
                     for row in rows:

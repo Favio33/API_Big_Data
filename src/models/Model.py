@@ -109,7 +109,6 @@ class Model():
                 if DataQuality.validate_data(row_entitie, table_name, pool):
                     #Data Quality
                     verified_data.append(row_entitie)
-                    print(verified_data)
                 else:
                     logging.warn(f"""Row number {i} not inserted due to data quality
                     Check up this dictionary: {row_entitie}""")
