@@ -1,0 +1,10 @@
+runtime: python310
+
+env_variables:
+  SECRET_KEY : 'pepo1612'
+  INSTANCE_NAME : 'code-challenge-384515:us-central1:hr-db'
+  IAM_USER : 'favio.varillas@unmsm.edu.pe'
+  PGSQL_HOST : "127.0.0.1"
+  PGSQL_USER : 'admin_prod'
+  PGSQL_PASSWORD : 'pepo1612'
+  PGSQL_DATABASE : 'employees'
