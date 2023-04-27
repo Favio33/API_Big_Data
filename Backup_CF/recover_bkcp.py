@@ -5,26 +5,7 @@ import psycopg2
 from psycopg2 import DatabaseError, pool, extras
 import os
 
-# Connection
-type_map = {
-    "integer": "int",
-    "character varying": 'string',
-    'timestamp with time zone': 'string',
-    'decimal': 'float',
-    'smallint': 'int',
-    'date': 'string'
-}
 
-
-def gen_avro_schema(col_datatype_tuple, table):
-    fields_schema = [
-        '{"name": "' + col[0] + '", "type": "' + type_map[col[1]] + '"}' for col in col_datatype_tuple]
-    
-    schema_str = '{"type":"record", "name": "' + table + \
-        '", "namespace": "employee", "fields": [' + \
-        ', '.join(fields_schema) + ']}'
-
-    return avro.schema.parse(schema_str)
 
 tables = {
     'jobs' : {
@@ -156,14 +137,9 @@ def recover_bkcp(db_schema, table, bckp_date):
         with conn.cursor() as cursor:
 
             cursor = conn.cursor()
-            #Attributes neccesary to read avro file
             file_name = f"{table}-{bckp_date}.avro"
             table_esquema = db_schema + "." + table
-            cursor.execute(
-            f"select column_name, data_type from information_schema.columns where table_name = %s and table_schema = %s;", (table, db_schema))
-            columns = cursor.fetchall()
             #Read avro file
-            schema = gen_avro_schema(columns, table)
             reader = DataFileReader(open(f"./Backup_CF/avro_files/{file_name}", "rb"), DatumReader())
             #Execute
             table_values = [tuple(row.values()) for row in reader]
