@@ -1,17 +1,18 @@
 DROP TABLE IF EXISTS employee.departments CASCADE;
-CREATE TABLE departments(
+CREATE TABLE employee.departments(
     id integer NOT NULL,
     department character varying(150),
     PRIMARY KEY(id)
 );
 
 DROP TABLE IF EXISTS employee.jobs CASCADE;
-CREATE TABLE jobs(
+CREATE TABLE employee.jobs(
     id integer NOT NULL,
     job character varying(100),
     PRIMARY KEY(id)
 );
 
+DROP TABLE IF EXISTS employee.hiredemployees CASCADE;
 CREATE TABLE employee.hiredemployees(
     id integer NOT NULL,
     name character varying(100),
