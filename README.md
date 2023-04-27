@@ -36,6 +36,7 @@ Historyc Script
 API (List and Insert Rows)
 - First run pip install -r requirements.txt
 - Set up your profile configuration in Google Cloud SDK to connect to the database; and set up .env credentials for database connection
+  [Guide Proxy](https://docs.google.com/document/d/1tVSUHsMd0pDiPr9gKnLgQpFi1rG75kSo/edit?usp=share_link&ouid=117615636739294319730&rtpof=true&sd=true)
 - Run main.py locally and use postman or a web to request the API
   - List Rows: http://127.0.0.1:5000/api/db/<table_name>/<num_rows>
   - Insert Rows: http://127.0.0.1:5000/api/db/bulkInsert/<table_name> - Body must be considerar all the columns for each register and focus on FK!
