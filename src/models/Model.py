@@ -1,7 +1,7 @@
 #Logging
 import logging
 
-logging.basicConfig(filename='insertRows.log', format='%(asctime)s - %(levelname)s - %(message)s', level=logging.INFO)
+logging.basicConfig(filename='insertRows.log', format='%(asctime)s - %(levelname)s - %(message)s', level=logging.DEBUG)
 
 #Database
 from database.conn import tcp_pool_connection

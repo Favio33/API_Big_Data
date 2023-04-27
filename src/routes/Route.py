@@ -2,6 +2,7 @@ from flask import Blueprint, jsonify, request
 
 #Models
 from models.Model import Model
+from DataProcessing.Processing import Processing
 
 
 main = Blueprint('model_route', __name__)
@@ -27,3 +28,11 @@ def add_rows(table_name):
             return jsonify({"message":affected_rows}), 500
     except Exception as ex:
         return jsonify({'Message':str(ex)}), 500
+
+@main.route('/view/jobPerQ/<year>')
+def get_jobPerQ(year):
+    try:
+        data_view = Processing.resumen_quarter(year)
+        return data_view
+    except Exception as ex:
+        return jsonify({'Message':str(ex)})
