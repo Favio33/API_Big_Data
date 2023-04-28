@@ -88,3 +88,49 @@
 2023-04-27 20:43:12,635 - WARNING -  * Debugger is active!
 2023-04-27 20:43:12,638 - INFO -  * Debugger PIN: 120-118-666
 2023-04-27 20:43:20,729 - INFO - 127.0.0.1 - - [27/Apr/2023 20:43:20] "GET /api/db/view/hiredEmpReport HTTP/1.1" 200 -
+2023-04-28 06:59:16,894 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-04-28 06:59:16,894 - INFO - [33mPress CTRL+C to quit[0m
+2023-04-28 06:59:16,902 - INFO -  * Restarting with stat
+2023-04-28 06:59:37,848 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-04-28 06:59:37,848 - INFO - [33mPress CTRL+C to quit[0m
+2023-04-28 06:59:37,855 - INFO -  * Restarting with stat
+2023-04-28 06:59:38,878 - WARNING -  * Debugger is active!
+2023-04-28 06:59:38,878 - INFO -  * Debugger PIN: 115-010-117
+2023-04-28 06:59:55,445 - INFO - 127.0.0.1 - - [28/Apr/2023 06:59:55] "GET / HTTP/1.1" 200 -
+2023-04-28 06:59:55,521 - INFO - 127.0.0.1 - - [28/Apr/2023 06:59:55] "GET /favicon.ico HTTP/1.1" 200 -
+2023-04-28 07:00:33,849 - INFO - 127.0.0.1 - - [28/Apr/2023 07:00:33] "[35m[1mGET /api/db/hiredemployees/20 HTTP/1.1[0m" 500 -
+2023-04-28 07:00:33,905 - INFO - 127.0.0.1 - - [28/Apr/2023 07:00:33] "GET /favicon.ico HTTP/1.1" 200 -
+2023-04-28 07:01:02,088 - INFO - 127.0.0.1 - - [28/Apr/2023 07:01:02] "[35m[1mGET /api/db/jobs/20 HTTP/1.1[0m" 500 -
+2023-04-28 07:01:02,127 - INFO - 127.0.0.1 - - [28/Apr/2023 07:01:02] "GET /favicon.ico HTTP/1.1" 200 -
+2023-04-28 07:01:03,030 - INFO - 127.0.0.1 - - [28/Apr/2023 07:01:03] "[35m[1mGET /api/db/jobs/20 HTTP/1.1[0m" 500 -
+2023-04-28 07:01:03,061 - INFO - 127.0.0.1 - - [28/Apr/2023 07:01:03] "GET /favicon.ico HTTP/1.1" 200 -
+2023-04-28 07:01:30,610 - INFO - 127.0.0.1 - - [28/Apr/2023 07:01:30] "[35m[1mGET /api/db/departments/2 HTTP/1.1[0m" 500 -
+2023-04-28 07:01:30,658 - INFO - 127.0.0.1 - - [28/Apr/2023 07:01:30] "GET /favicon.ico HTTP/1.1" 200 -
+2023-04-28 07:02:16,499 - INFO - 127.0.0.1 - - [28/Apr/2023 07:02:16] "[35m[1mGET /api/db/departments/7 HTTP/1.1[0m" 500 -
+2023-04-28 07:02:16,570 - INFO - 127.0.0.1 - - [28/Apr/2023 07:02:16] "GET /favicon.ico HTTP/1.1" 200 -
+2023-04-28 07:04:10,896 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-04-28 07:04:10,896 - INFO - [33mPress CTRL+C to quit[0m
+2023-04-28 07:04:10,899 - INFO -  * Restarting with stat
+2023-04-28 07:04:12,015 - WARNING -  * Debugger is active!
+2023-04-28 07:04:12,019 - INFO -  * Debugger PIN: 120-118-666
+2023-04-28 07:04:31,335 - INFO - 127.0.0.1 - - [28/Apr/2023 07:04:31] "GET /api/db/departments/7 HTTP/1.1" 200 -
+2023-04-28 07:04:31,431 - INFO - 127.0.0.1 - - [28/Apr/2023 07:04:31] "GET /favicon.ico HTTP/1.1" 200 -
+2023-04-28 07:05:03,284 - INFO - 127.0.0.1 - - [28/Apr/2023 07:05:03] "GET /api/db/hiredemployees/20 HTTP/1.1" 200 -
+2023-04-28 07:05:03,369 - INFO - 127.0.0.1 - - [28/Apr/2023 07:05:03] "GET /favicon.ico HTTP/1.1" 200 -
+2023-04-28 07:06:08,702 - INFO - 127.0.0.1 - - [28/Apr/2023 07:06:08] "GET /api/db/hiredemployees/20 HTTP/1.1" 200 -
+2023-04-28 07:06:08,769 - INFO - 127.0.0.1 - - [28/Apr/2023 07:06:08] "GET /favicon.ico HTTP/1.1" 200 -
+2023-04-28 07:07:17,752 - INFO -  * Detected change in 'd:\\code_challenge\\src\\main.py', reloading
+2023-04-28 07:07:17,895 - INFO -  * Restarting with stat
+2023-04-28 07:07:42,729 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-04-28 07:07:42,729 - INFO - [33mPress CTRL+C to quit[0m
+2023-04-28 07:07:42,729 - INFO -  * Restarting with stat
+2023-04-28 07:07:43,807 - WARNING -  * Debugger is active!
+2023-04-28 07:07:43,815 - INFO -  * Debugger PIN: 120-118-666
+2023-04-28 07:07:49,585 - INFO - 127.0.0.1 - - [28/Apr/2023 07:07:49] "GET /api/db/hiredemployees/20 HTTP/1.1" 200 -
+2023-04-28 07:07:49,657 - INFO - 127.0.0.1 - - [28/Apr/2023 07:07:49] "GET /favicon.ico HTTP/1.1" 200 -
+2023-04-28 07:08:22,576 - INFO - 127.0.0.1 - - [28/Apr/2023 07:08:22] "GET /api/db/view/jobPerQ/2021 HTTP/1.1" 200 -
+2023-04-28 07:08:23,145 - INFO - 127.0.0.1 - - [28/Apr/2023 07:08:23] "GET /favicon.ico HTTP/1.1" 200 -

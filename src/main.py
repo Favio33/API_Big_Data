@@ -1,6 +1,7 @@
 from flask import Flask
-import sys
-sys.path.append('./src/')
+#Activate this lines when yur are deploying in GAE
+#import sys
+#sys.path.append('./src/')
 from config import config
 
 
@@ -17,7 +18,7 @@ app.config.from_object(config['development'])
 def page_not_found(error):
     return '<h1> Check the url! </h1>'
 
-#Blueprints
+#Blueprintsx|
 app.register_blueprint(Route.main, url_prefix='/api/db')
 
 app.register_error_handler(404, page_not_found)
