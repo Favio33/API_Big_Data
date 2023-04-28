@@ -36,3 +36,11 @@ def get_jobPerQ(year):
         return data_view
     except Exception as ex:
         return jsonify({'Message':str(ex)})
+
+@main.route('/view/hiredEmpReport')
+def get_HiredEmpReport():
+    try:
+        data_view = Processing.report_hired_employes_top()
+        return data_view
+    except Exception as ex:
+        return jsonify({'Message':str(ex)})

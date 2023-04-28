@@ -9,3 +9,82 @@
 2023-04-27 18:47:18,916 - INFO -  * Restarting with stat
 2023-04-27 18:47:19,874 - WARNING -  * Debugger is active!
 2023-04-27 18:47:19,882 - INFO -  * Debugger PIN: 120-118-666
+2023-04-27 19:05:01,000 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-04-27 19:05:01,000 - INFO - [33mPress CTRL+C to quit[0m
+2023-04-27 19:05:01,008 - INFO -  * Restarting with stat
+2023-04-27 19:05:01,799 - WARNING -  * Debugger is active!
+2023-04-27 19:05:01,803 - INFO -  * Debugger PIN: 120-118-666
+2023-04-27 19:05:08,959 - INFO - 127.0.0.1 - - [27/Apr/2023 19:05:08] "GET /api/db/view/jobPerQ/2021 HTTP/1.1" 200 -
+2023-04-27 19:05:33,371 - INFO -  * Detected change in 'd:\\code_challenge\\src\\DataProcessing\\Processing.py', reloading
+2023-04-27 19:05:33,466 - INFO -  * Restarting with stat
+2023-04-27 19:05:34,355 - WARNING -  * Debugger is active!
+2023-04-27 19:05:34,355 - INFO -  * Debugger PIN: 120-118-666
+2023-04-27 19:05:41,016 - INFO - 127.0.0.1 - - [27/Apr/2023 19:05:41] "GET /api/db/view/jobPerQ/2021 HTTP/1.1" 200 -
+2023-04-27 19:06:21,838 - INFO -  * Detected change in 'd:\\code_challenge\\src\\DataProcessing\\Processing.py', reloading
+2023-04-27 19:06:21,924 - INFO -  * Restarting with stat
+2023-04-27 20:29:14,198 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-04-27 20:29:14,198 - INFO - [33mPress CTRL+C to quit[0m
+2023-04-27 20:29:14,200 - INFO -  * Restarting with stat
+2023-04-27 20:29:15,064 - WARNING -  * Debugger is active!
+2023-04-27 20:29:15,067 - INFO -  * Debugger PIN: 120-118-666
+2023-04-27 20:31:10,925 - INFO - 127.0.0.1 - - [27/Apr/2023 20:31:10] "GET /api/db/view/hiredEmpReport HTTP/1.1" 200 -
+2023-04-27 20:32:15,792 - INFO -  * Detected change in 'd:\\code_challenge\\src\\DataProcessing\\Processing.py', reloading
+2023-04-27 20:32:15,874 - INFO -  * Restarting with stat
+2023-04-27 20:32:16,724 - WARNING -  * Debugger is active!
+2023-04-27 20:32:16,724 - INFO -  * Debugger PIN: 120-118-666
+2023-04-27 20:32:20,943 - INFO -  * Detected change in 'd:\\code_challenge\\src\\DataProcessing\\Processing.py', reloading
+2023-04-27 20:32:21,006 - INFO -  * Restarting with stat
+2023-04-27 20:32:22,001 - WARNING -  * Debugger is active!
+2023-04-27 20:32:22,004 - INFO -  * Debugger PIN: 120-118-666
+2023-04-27 20:32:34,295 - INFO - 127.0.0.1 - - [27/Apr/2023 20:32:34] "GET /api/db/view/hiredEmpReport HTTP/1.1" 200 -
+2023-04-27 20:32:58,423 - INFO -  * Detected change in 'd:\\code_challenge\\src\\DataProcessing\\Processing.py', reloading
+2023-04-27 20:32:58,507 - INFO -  * Restarting with stat
+2023-04-27 20:32:59,470 - WARNING -  * Debugger is active!
+2023-04-27 20:32:59,472 - INFO -  * Debugger PIN: 120-118-666
+2023-04-27 20:33:10,653 - INFO - 127.0.0.1 - - [27/Apr/2023 20:33:10] "GET /api/db/view/hiredEmpReport HTTP/1.1" 200 -
+2023-04-27 20:33:23,419 - INFO -  * Detected change in 'd:\\code_challenge\\src\\DataProcessing\\Processing.py', reloading
+2023-04-27 20:33:23,509 - INFO -  * Restarting with stat
+2023-04-27 20:33:24,434 - WARNING -  * Debugger is active!
+2023-04-27 20:33:24,437 - INFO -  * Debugger PIN: 120-118-666
+2023-04-27 20:33:33,685 - INFO - 127.0.0.1 - - [27/Apr/2023 20:33:33] "GET /api/db/view/hiredEmpReport HTTP/1.1" 200 -
+2023-04-27 20:35:10,470 - INFO -  * Detected change in 'd:\\code_challenge\\src\\DataProcessing\\Processing.py', reloading
+2023-04-27 20:35:10,555 - INFO -  * Restarting with stat
+2023-04-27 20:35:11,426 - WARNING -  * Debugger is active!
+2023-04-27 20:35:11,429 - INFO -  * Debugger PIN: 120-118-666
+2023-04-27 20:35:21,745 - INFO - 127.0.0.1 - - [27/Apr/2023 20:35:21] "GET /api/db/view/hiredEmpReport HTTP/1.1" 200 -
+2023-04-27 20:36:41,960 - INFO -  * Detected change in 'd:\\code_challenge\\src\\DataProcessing\\Processing.py', reloading
+2023-04-27 20:36:42,051 - INFO -  * Restarting with stat
+2023-04-27 20:36:42,929 - WARNING -  * Debugger is active!
+2023-04-27 20:36:42,932 - INFO -  * Debugger PIN: 120-118-666
+2023-04-27 20:36:49,210 - INFO -  * Detected change in 'd:\\code_challenge\\src\\DataProcessing\\Processing.py', reloading
+2023-04-27 20:36:49,295 - INFO -  * Restarting with stat
+2023-04-27 20:36:50,358 - WARNING -  * Debugger is active!
+2023-04-27 20:36:50,360 - INFO -  * Debugger PIN: 120-118-666
+2023-04-27 20:37:01,988 - INFO - 127.0.0.1 - - [27/Apr/2023 20:37:01] "GET /api/db/view/hiredEmpReport HTTP/1.1" 200 -
+2023-04-27 20:37:24,076 - INFO -  * Detected change in 'd:\\code_challenge\\src\\DataProcessing\\Processing.py', reloading
+2023-04-27 20:37:24,144 - INFO -  * Restarting with stat
+2023-04-27 20:37:24,982 - WARNING -  * Debugger is active!
+2023-04-27 20:37:24,984 - INFO -  * Debugger PIN: 120-118-666
+2023-04-27 20:37:32,571 - INFO - 127.0.0.1 - - [27/Apr/2023 20:37:32] "[35m[1mGET /api/db/view/hiredEmpReport HTTP/1.1[0m" 500 -
+2023-04-27 20:38:11,944 - INFO -  * Detected change in 'd:\\code_challenge\\src\\DataProcessing\\Processing.py', reloading
+2023-04-27 20:38:12,031 - INFO -  * Restarting with stat
+2023-04-27 20:38:13,081 - WARNING -  * Debugger is active!
+2023-04-27 20:38:13,084 - INFO -  * Debugger PIN: 120-118-666
+2023-04-27 20:38:26,868 - INFO - 127.0.0.1 - - [27/Apr/2023 20:38:26] "GET /api/db/view/jobPerQ/2021 HTTP/1.1" 200 -
+2023-04-27 20:38:49,883 - INFO -  * Detected change in 'd:\\code_challenge\\src\\DataProcessing\\Processing.py', reloading
+2023-04-27 20:38:49,963 - INFO -  * Restarting with stat
+2023-04-27 20:38:50,797 - WARNING -  * Debugger is active!
+2023-04-27 20:38:50,800 - INFO -  * Debugger PIN: 120-118-666
+2023-04-27 20:39:50,897 - INFO - 127.0.0.1 - - [27/Apr/2023 20:39:50] "[35m[1mGET /api/db/view/hiredEmpReport HTTP/1.1[0m" 500 -
+2023-04-27 20:42:44,335 - INFO -  * Detected change in 'd:\\code_challenge\\src\\DataProcessing\\Processing.py', reloading
+2023-04-27 20:42:44,420 - INFO -  * Restarting with stat
+2023-04-27 20:42:45,407 - WARNING -  * Debugger is active!
+2023-04-27 20:42:45,409 - INFO -  * Debugger PIN: 120-118-666
+2023-04-27 20:42:51,309 - INFO - 127.0.0.1 - - [27/Apr/2023 20:42:51] "GET /api/db/view/hiredEmpReport HTTP/1.1" 200 -
+2023-04-27 20:43:11,667 - INFO -  * Detected change in 'd:\\code_challenge\\src\\DataProcessing\\Processing.py', reloading
+2023-04-27 20:43:11,745 - INFO -  * Restarting with stat
+2023-04-27 20:43:12,635 - WARNING -  * Debugger is active!
+2023-04-27 20:43:12,638 - INFO -  * Debugger PIN: 120-118-666
+2023-04-27 20:43:20,729 - INFO - 127.0.0.1 - - [27/Apr/2023 20:43:20] "GET /api/db/view/hiredEmpReport HTTP/1.1" 200 -
