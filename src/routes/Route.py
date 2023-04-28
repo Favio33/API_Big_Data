@@ -25,7 +25,7 @@ def add_rows(table_name):
         if isinstance(affected_rows,int) and affected_rows > 1:
             return jsonify({"Rows inserted":affected_rows})
         else:
-            return jsonify({"message":affected_rows}), 500
+            return jsonify({"Affected Rows":affected_rows}), 500
     except Exception as ex:
         return jsonify({'Message':str(ex)}), 500
 
