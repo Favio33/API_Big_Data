@@ -15,7 +15,7 @@ app.config.from_object(config['development'])
 
 #Error Handler 404
 def page_not_found(error):
-    return '<h1> Page Not Found </h1>'
+    return '<h1> Check the url! </h1>'
 
 #Blueprints
 app.register_blueprint(Route.main, url_prefix='/api/db')
