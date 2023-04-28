@@ -1,4 +1,6 @@
 from flask import Flask
+import sys
+sys.path.append('./src/')
 from config import config
 
 

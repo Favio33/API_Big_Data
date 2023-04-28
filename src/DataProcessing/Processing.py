@@ -82,7 +82,7 @@ class Processing():
             dfFilteredLeftEmployeeDepts = dfLeftJoinTables[dfLeftJoinTables['datetime'].dt.strftime(
                 "%Y") == str(2021)].iloc[:,:2]
             #Mean hired employees for all departments in 2022
-            mean_2021 = int(dfFilteredLeftEmployeeDepts.groupby('department').count().mean().round(0))
+            mean_2021 = int(dfFilteredLeftEmployeeDepts.groupby('department').count().mean().round(0).iloc[0])
             #Report
             dfLeftJoinTablesGrouped =  dfLeftJoinTables.iloc[:,:2].groupby('department').count().astype(int).reset_index(drop=False)
             dfFilterGroupedTable = dfLeftJoinTablesGrouped[dfLeftJoinTablesGrouped['id'] > mean_2021].rename({'id':'hired'})
